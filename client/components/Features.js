@@ -29,8 +29,7 @@ const Features = ({ details, }) => {
                         paddingBottom: '1vh',
                     }, src: details.image })),
             react_1.default.createElement(core_1.Typography, { color: "textPrimary", style: { fontWeight: 700 }, align: "center", gutterBottom: true }, details.subheading),
-            react_1.default.createElement(core_1.Typography, { align: "center" },
-                react_1.default.createElement("p", null, details.body)))));
+            react_1.default.createElement(core_1.Typography, { align: "center" }, details.body))));
 };
 // ++++++++++++++++++++++++
 /*

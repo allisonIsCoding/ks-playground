@@ -18,21 +18,28 @@ var __importStar = (this && this.__importStar) || function (mod) {
     __setModuleDefault(result, mod);
     return result;
 };
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
 const React = __importStar(require("react"));
 const core_1 = require("@material-ui/core");
-const react_scroll_1 = require("react-scroll");
-const miniLogo = require('../assets/Kafkasocks-mini-logo.svg');
-// playground\client\assets\ks-logo-full.svg
+const react_1 = __importDefault(require("@mdi/react"));
+const js_1 = require("@mdi/js");
+const GitHub_1 = __importDefault(require("@material-ui/icons/GitHub"));
+const LinkedIn_1 = __importDefault(require("@material-ui/icons/LinkedIn"));
+const AlternateEmail_1 = __importDefault(require("@material-ui/icons/AlternateEmail"));
 const useStyles = core_1.makeStyles((theme) => core_1.createStyles({
     root: {
-        width: '100vw',
-        padding: '0',
-        bottom: '0',
+        width: "100vw",
+        height: "20vh",
+        padding: "0",
+        bottom: "0",
+        background: theme.palette.primary.main,
     },
     appBar: {
-        maxHeight: '10vh',
-        background: theme.palette.secondary.light
+        maxHeight: "10vh",
+        background: theme.palette.secondary.light,
     },
     landingButtons: {
         display: "flex",
@@ -40,34 +47,23 @@ const useStyles = core_1.makeStyles((theme) => core_1.createStyles({
     },
     logo: {
         alignSelf: "flex-start",
-        display: 'flex',
+        display: "flex",
     },
     button: {
         // margin: "0.5rem 0.5rem 0.5rem /0.5rem",
-        color: theme.palette.text.primary
+        color: theme.palette.text.primary,
     },
 }));
-const GlobalCss = core_1.withStyles({
-    "@global": {
-        "html, body": {
-            margin: 0,
-            padding: 0,
-            bottom: 0,
-        },
-    },
-})(() => null);
-const NavBar = () => {
+function Footer() {
     const classes = useStyles();
-    return (React.createElement("div", { className: classes.root },
-        React.createElement(GlobalCss, null),
-        React.createElement(core_1.AppBar, { className: classes.appBar },
-            React.createElement(core_1.Toolbar, { className: classes.landingButtons },
-                React.createElement(core_1.IconButton, { className: classes.button },
-                    React.createElement(core_1.Icon, { component: react_scroll_1.Link, to: "bottom" },
-                        React.createElement("img", { alt: "miniNavLogo", style: { height: '95%' }, src: miniLogo }))),
-                React.createElement(core_1.Button, { className: classes.button, component: react_scroll_1.Link, to: "features", activeClass: "active", spy: true, offset: -75, smooth: true }, "Features"),
-                React.createElement(core_1.Button, { className: classes.button, component: react_scroll_1.Link, to: "demo", activeClass: "active", spy: true, offset: -75, smooth: true }, "Demo"),
-                React.createElement(core_1.Button, { className: classes.button, component: react_scroll_1.Link, to: "getting started", activeClass: "active", spy: true, offset: -75, smooth: true }, "Getting Started"),
-                React.createElement(core_1.Button, { className: classes.button, component: react_scroll_1.Link, to: "team", activeClass: "active", spy: true, offset: -75, smooth: true }, "Team")))));
-};
-exports.default = NavBar;
+    const [value, setValue] = React.useState(0);
+    return (React.createElement(core_1.BottomNavigation, { value: value, onChange: (event, newValue) => {
+            setValue(newValue);
+        }, showLabels: true, className: classes.root },
+        " ",
+        React.createElement(core_1.BottomNavigationAction, { label: "install kafka-socks", value: "npm", href: "https://www.npmjs.com/package/kafka-socks", target: "_blank", rel: "noopener noreferrer", icon: React.createElement(react_1.default, { path: js_1.mdiNpm, size: 2 }) }),
+        React.createElement(core_1.BottomNavigationAction, { label: "Github", value: "github", href: "https://github.com/oslabs-beta/Kafkasocks#readme", target: "_blank", rel: "noopener noreferrer", icon: React.createElement(GitHub_1.default, null) }),
+        React.createElement(core_1.BottomNavigationAction, { label: "LinkedIn", value: "linkedin", href: "https://linkedin.com/company/kafka-socks", target: "_blank", rel: "noopener noreferrer", icon: React.createElement(LinkedIn_1.default, null) }),
+        React.createElement(core_1.BottomNavigationAction, { label: "Contact Us", value: "contactus", href: "mailto:admin@kafka-socks.io", icon: React.createElement(AlternateEmail_1.default, null) })));
+}
+exports.default = Footer;

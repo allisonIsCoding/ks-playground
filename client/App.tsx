@@ -63,7 +63,8 @@ const useStyles = makeStyles((theme: Theme) => createStyles({
   }
 }))
 
-const logo = require('./assets/logo.svg').default;
+import logo from './assets/logo.svg'
+// const logo = require('./assets/logo.svg');
 // playground\client\assets\ks-logo-full.svg
 const App: FC = () => {
   const classes = useStyles();

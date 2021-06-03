@@ -22,7 +22,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const React = __importStar(require("react"));
 const core_1 = require("@material-ui/core");
 const react_scroll_1 = require("react-scroll");
-const miniLogo = require('../assets/Kafkasocks-mini-logo.svg');
+const miniLogo = require('../assets/KSminiLogo.svg').default;
 // playground\client\assets\ks-logo-full.svg
 const useStyles = core_1.makeStyles((theme) => core_1.createStyles({
     root: {
@@ -30,7 +30,7 @@ const useStyles = core_1.makeStyles((theme) => core_1.createStyles({
         padding: '0',
     },
     appBar: {
-        maxHeight: '10vh',
+        maxHeight: '15vh',
         background: theme.palette.secondary.light
     },
     landingButtons: {
@@ -38,8 +38,10 @@ const useStyles = core_1.makeStyles((theme) => core_1.createStyles({
         justifyContent: "flex-start",
     },
     logo: {
-        alignSelf: "flex-start",
+        // alignSelf: "flex-start",
         display: 'flex',
+        alignSelf: 'center',
+        justifyself: 'center'
     },
     button: {
         // margin: "0.5rem 0.5rem 0.5rem /0.5rem",
@@ -62,7 +64,7 @@ const NavBar = () => {
             React.createElement(core_1.Toolbar, { className: classes.landingButtons },
                 React.createElement(core_1.IconButton, { className: classes.button },
                     React.createElement(core_1.Icon, { component: react_scroll_1.Link, to: "top", activeClass: "active", spy: true, smooth: true },
-                        React.createElement("img", { alt: "miniNavLogo", style: { height: '95%' }, src: miniLogo }))),
+                        React.createElement("img", { alt: "miniNavLogo", style: { width: '98%' }, src: miniLogo }))),
                 React.createElement(core_1.Button, { className: classes.button, component: react_scroll_1.Link, to: "features", activeClass: "active", spy: true, offset: -75, smooth: true }, "Features"),
                 React.createElement(core_1.Button, { className: classes.button, component: react_scroll_1.Link, to: "demo", activeClass: "active", spy: true, offset: -75, smooth: true }, "Demo"),
                 React.createElement(core_1.Button, { className: classes.button, component: react_scroll_1.Link, to: "getting started", activeClass: "active", spy: true, offset: -75, smooth: true }, "Getting Started"),

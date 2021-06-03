@@ -45,11 +45,11 @@ const Features: FC<FeatureCard> = ({
             src={details.image}
           />
         </Typography>
-        <Typography color="textPrimary" style={{fontWeight: 700}}align="center" gutterBottom>
+        <Typography color="textPrimary" style={{fontWeight: 700}} align="center" gutterBottom>
           {details.subheading}
         </Typography>
         <Typography align="center">
-          <p>{details.body}</p>
+          {details.body}
 
         </Typography>
       </CardContent>
