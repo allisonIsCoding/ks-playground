@@ -39,7 +39,7 @@ const TeamMember: FC<Props> = ({
           <img
             alt="profilePhoto"
             style={{
-              height: '12vh',
+              height: '20vh',
               paddingBottom: '1vh',
               borderRadius: '50%',
             }}
