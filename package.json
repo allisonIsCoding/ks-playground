@@ -3,13 +3,14 @@
   "version": "1.0.0",
   "description": "",
   "main": "/client/index.tsx",
+  "homepage": ".",
   "engine": {
     "node": "14.x",
     "npm": "6.14.4"
   },
   "scripts": {
     "__test__": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack",
+    "build": "webpack serve",
     "start": "ts-node server/server.ts",
     "go": "npm run build && npm start",
     "__dev-mac-only__": "cross-env NODE_ENV=development webpack serve --open && NODE_ENV=development nodemon server/server.ts",
