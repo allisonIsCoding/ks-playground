@@ -7,12 +7,14 @@ import {
   Theme,
   BottomNavigation,
   BottomNavigationAction,
+  IconButton
 } from "@material-ui/core";
-import Icon from '@mdi/react'
-import { mdiNpm } from '@mdi/js'
+import Icon from "@mdi/react";
+import { mdiNpm } from "@mdi/js";
 import GitHubIcon from "@material-ui/icons/GitHub";
 import LinkedInIcon from "@material-ui/icons/LinkedIn";
 import AlternateEmailIcon from "@material-ui/icons/AlternateEmail";
+import { Link } from 'react-scroll';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -42,7 +44,7 @@ const useStyles = makeStyles((theme: Theme) =>
   })
 );
 
-export default function Footer() {
+const Footer: FC = () => {
   const classes = useStyles();
   const [value, setValue] = React.useState(0);
   return (
@@ -59,15 +61,15 @@ export default function Footer() {
         label="install kafka-socks"
         value="npm"
         href="https://www.npmjs.com/package/kafka-socks"
-        target="_blank" 
+        target="_blank"
         rel="noopener noreferrer"
-        icon={<Icon path={mdiNpm} size={2}/>}
+        icon={<Icon path={mdiNpm} size={2} />}
       />
       <BottomNavigationAction
         label="Github"
         value="github"
         href="https://github.com/oslabs-beta/Kafkasocks#readme"
-        target="_blank" 
+        target="_blank"
         rel="noopener noreferrer"
         icon={<GitHubIcon />}
       />
@@ -75,7 +77,7 @@ export default function Footer() {
         label="LinkedIn"
         value="linkedin"
         href="https://linkedin.com/company/kafka-socks"
-        target="_blank" 
+        target="_blank"
         rel="noopener noreferrer"
         icon={<LinkedInIcon />}
       />
@@ -88,3 +90,5 @@ export default function Footer() {
     </BottomNavigation>
   );
 }
+
+export default Footer;

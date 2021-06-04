@@ -38,10 +38,12 @@ const TeamMember: FC<Props> = ({
         <Typography align="center">
           <img
             alt="profilePhoto"
-            style={{
-              height: '20vh',
+            style={{  
+              // maxHeight: '15vh',
+              // minHeight: '15vh',
+              height: '18vh',
               paddingBottom: '1vh',
-              borderRadius: '50%',
+              borderRadius: '100%',
             }}
             src={details.image}
           />
