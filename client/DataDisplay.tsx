@@ -88,7 +88,7 @@ const DataDisplay: FC = ({}) => {
         lineTension: 1,
         cubicInterpolationMode: "monotone",
         fill: false,
-        borderDash: [8, 4],
+        // borderDash: [8, 4],
         data: [],
       },
       {
@@ -96,7 +96,7 @@ const DataDisplay: FC = ({}) => {
         borderColor: "rgb(65,105,225)",
         // backgroundColor: "",
         lineTension: 1,
-        cubicInterpolationMode: "monotone",
+        // cubicInterpolationMode: "monotone",
         fill: false,
         borderDash: [8, 4],
         data: [],
